@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.login{
+    background: url(/login/Filme/erika-fletcher-MZxqc6n9qCw-unsplash.jpg) no-repeat center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    /*  RECOMENZACION AL MOMENTO DE REALIZAR UN CENTRADO YO LO REALICE PORQUE SOLO TENIA 2 UN PADRE Y  UN HIJO
+        YA QUE SOLO VI QUE SOLO SE PODIA REALIZAR CO SOLO 2 HAY QUE PONER EN PRACTICA CON MAS DIV HJOS*/
+    display: flex;
+    align-items: center;
+}
+
+.login_txt{
+    width: 600px;
+    height: 300px;
+    
+    
+    /* CON ESTE MARGIN SE CENTRA ORIZONTAL MENTE YA CON EL ALIGN-ITENS CENTER ES VERTICALMENTE 
+       RECOMENDACION EN ESTA PARTE COLO CAR PRIMERO EL MARGIN Y DEPSUES EL ITEMS*/
+    margin: 0 auto;
+}
+
+.txt{
+    width: 400px;
+    height: 300px;
+    
+    /* CON ESTE MARGIN SE CENTRA ORIZONTAL MENTE YA CON EL ALIGN-ITENS CENTER ES VERTICALMENTE 
+       RECOMENDACION EN ESTA PARTE COLO CAR PRIMERO EL MARGIN Y DEPSUES EL ITEMS*/
+    margin: 0 auto;
+}
+
+.glass-effect{
+    background: #000000ac;
+    /* se usa para hace un efecto desenfoca del efecto de la parte de atras de un elelmento */
+    backdrop-filter: blur(0.4px);
+    /* Sirve para que sea remposible el glass*/
+    -webkit-backdrop-filter: blur(0.4px);
+}
+.txt h3{
+    color: white;
+}
+
+.txt p{
+    color: white;
+}
