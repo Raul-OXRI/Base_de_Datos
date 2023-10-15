@@ -10,16 +10,17 @@ def home(request):
 
 # enlace de inicio
 def books(request):
-    return HttpResponse("Libros")
+    return render(request, "appweb/Libros.html")
 
 # enlace de inicio
 def libraries(request):
-    return HttpResponse("Bibliotecas")
+    return render(request, "appweb/Bibliotecas.html")
 
 # enlace de inicio
 def about(request):
-    return HttpResponse("Acerca")
+    return render(request, "appweb/Acerca.html")
 
 # enlace de inicio
 def login(request):
-    return HttpResponse("Login")
+    #return HttpResponse("Login")
+    return render(request, "appweb/Login.html")
