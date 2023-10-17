@@ -76,11 +76,19 @@ WSGI_APPLICATION = 'Base_Datos.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+# Coneccion de base de datos a las 9:10 PM
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'django_biblioteca',
+        'USER': 'sa',
+        'PASSWORD': 'clavedeacceso321$',
+        'HOST': 'localhost',
+        'PORT': '',
+        'OPCIONS':{
+            'driver': 'OBDC Driver 13 for SQL Server',
+        },
+
     }
 }
 

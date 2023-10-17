@@ -17,13 +17,14 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link text-white" href="{% url 'Home' %}">Inicio</a>
-              <!--<a class="nav-link" href="#">Reservar</a>
+              <!--
+                {% if request.path == '/' %} active {% endif %} -> este es posible que nos ayude peroes posible
+                <a class="nav-link" href="#">Reservar</a>
               <a class="nav-link" href="#">Prestamo</a>
-            git commit -m ":construction_worker: Realizacion de nav bar"
             -->
               <a class="nav-link text-white" href="{% url 'Libros'%}">Libros</a>
               <a class="nav-link text-white" href="{% url 'Bibliotecas'%}">Bibliotecas</a>
-              <a class="nav-link text-white" href="{% url 'Acerca'%}">acerca de</a>
+              <a class="nav-link text-white" href="{% url 'Acerca'%}">Acerca de</a>
             </div>
           </div>
           <a class= "nav-link text-white" href="{% url 'Login' %}">Login</a>
