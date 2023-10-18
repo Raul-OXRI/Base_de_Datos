@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Se agrego la aplicacion que creamos
     'appweb',
+    'Biblioteca',
 ]
 
 MIDDLEWARE = [
@@ -79,16 +80,8 @@ WSGI_APPLICATION = 'Base_Datos.wsgi.application'
 # Coneccion de base de datos a las 9:10 PM
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'django_biblioteca',
-        'USER': 'sa',
-        'PASSWORD': 'clavedeacceso321$',
-        'HOST': 'localhost',
-        'PORT': '',
-        'OPCIONS':{
-            'driver': 'OBDC Driver 13 for SQL Server',
-        },
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
