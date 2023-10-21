@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Se agrego la aplicacion que creamos
     'appweb',
+    'Biblioteca',
+    'Ejemplar',
+    
 ]
 
 MIDDLEWARE = [
@@ -80,7 +83,7 @@ WSGI_APPLICATION = 'Base_Datos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'django_biblioteca',
+        'NAME': 'Biblioteca_umg',
         'USER': 'sa',
         'PASSWORD': 'clavedeacceso321$',
         'HOST': 'localhost',
@@ -88,8 +91,8 @@ DATABASES = {
         'OPCIONS':{
             'driver': 'OBDC Driver 13 for SQL Server',
         },
+}
 
-    }
 }
 
 
