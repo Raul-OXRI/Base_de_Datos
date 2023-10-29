@@ -15,4 +15,4 @@ class Estudiante(models.Model):
         verbose_name_plural = "estudiantes"
 
     def __str__(self):
-        return f"{self.usuario} {self.Correo_electronico}"
+        return f"{self.Usuario} {self.Correo_electronico}"
