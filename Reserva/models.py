@@ -9,10 +9,15 @@ class Reserva(models.Model):
     id_reserva = models.AutoField(primary_key=True)
     Ejemplar = models.ForeignKey(Ejemplar, on_delete=models.CASCADE)
     Estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
-    Cantidad_dias = models.SmallIntegerField('Cantidad de Dias a Reservar',default = 10)
-    Fecha_creacion = models.DateField('Fecha de creación', auto_now_add = True)
-    Fecha_vencida = models.DateField('Fecha de vencimiento de la reserva', null = True, blank = True)
+    Cantidad_dias = models.SmallIntegerField('Cantidad de dias en llevarse el ejemplar', default = 10)
+    Fecha_reserva = models.DateField('Fecha de creación de reserva: ', auto_now_add = False)
+    Fecha_reserva_vencida = models.DateField('Fecha de vencimiento de la reserva: ', null = True, blank = True)
     Estado = models.BooleanField(default=True, verbose_name='Estado')
+
+    def save(self, *args, **kwargs):
+        if self.Fecha_reserva >= self.Fecha_reserva_vencida:
+            raise ValueError('La fecha de creación debe ser anterior a la fecha de vencimiento')
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'reserva'
@@ -24,8 +29,6 @@ class Reserva(models.Model):
 @receiver(post_save, sender = Reserva)
 
 def AgregarFechaVencidaReserva(sender, instance, **kwargs):
-    if not instance.Fecha_vencida:
-        instance.Fecha_vencida = instance.Fecha_creacion + timedelta(days=instance.Cantidad_dias)
+    if not instance.Fecha_reserva_vencida:
+        instance.Fecha_reserva_vencida = instance.Fecha_reserva + timedelta(days=instance.Cantidad_dias)
         instance.save()
-
-#post_save.connect(AgregarFechaVencidaReserva, sender=Reserva)

@@ -1,6 +1,6 @@
 Formato=(
-    ('papel','Papel'),
-    ('electronico','Electronico'),
-    ('interactivo','Interactivo'),
+    ('libro','Libro'),
+    ('revista','Revista'),
+    ('material_digital','Material_digital'),
 )
 

@@ -10,7 +10,7 @@ class Ejemplar(models.Model):
     Autor = models.CharField(max_length=100)
     Año = models.IntegerField()
     Editorial = models.CharField(max_length=100)
-    Tipo = models.CharField(max_length=11, choices=Formato)
+    Tipo = models.CharField(max_length=16, choices=Formato)
     Existencia = models.IntegerField()
     Biblioteca = models.ManyToManyField(Biblioteca,blank=True,)
     

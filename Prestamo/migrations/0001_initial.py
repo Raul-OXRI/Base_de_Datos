@@ -15,19 +15,19 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Reserva',
+            name='Prestamo',
             fields=[
                 ('id_reserva', models.AutoField(primary_key=True, serialize=False)),
-                ('Cantidad_dias', models.SmallIntegerField(default=10, verbose_name='Cantidad de dias en llevarse el ejemplar')),
-                ('Fecha_reserva', models.DateField(verbose_name='Fecha de creación de reserva: ')),
-                ('Fecha_reserva_vencida', models.DateField(blank=True, null=True, verbose_name='Fecha de vencimiento de la reserva: ')),
+                ('Cantidad_dias', models.SmallIntegerField(default=10, verbose_name='Cantidad de Dias a Reservar')),
+                ('Fecha_creacion', models.DateField(auto_now_add=True, verbose_name='Fecha de creación')),
+                ('Fecha_vencida', models.DateField(blank=True, null=True, verbose_name='Fecha de vencimiento de la reserva')),
                 ('Estado', models.BooleanField(default=True, verbose_name='Estado')),
                 ('Ejemplar', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Ejemplar.ejemplar')),
                 ('Estudiante', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Estudiante.estudiante')),
             ],
             options={
-                'verbose_name': 'reserva',
-                'verbose_name_plural': 'reservas',
+                'verbose_name': 'prestamo',
+                'verbose_name_plural': 'prestamos',
             },
         ),
     ]

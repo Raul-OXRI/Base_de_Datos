@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'Biblioteca',
     'Ejemplar',
     'Estudiante',
-    'Pestamo',
     'Reserva',
+    'Prestamo',
     
 ]
 

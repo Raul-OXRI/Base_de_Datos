@@ -4,7 +4,7 @@ from .models import Reserva
 # Register your models here.
 class ReservaAdmin(admin.ModelAdmin):
     #form = ReservaForm
-    list_display = ('Ejemplar','Estudiante','Fecha_creacion','Fecha_vencida','Estado')
+    list_display = ('Ejemplar','Estudiante','Fecha_reserva','Fecha_reserva_vencida','Estado')
 
 
 admin.site.register(Reserva, ReservaAdmin)
